@@ -1,0 +1,12 @@
+# Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
+RewriteBase /ingenios
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^([^/]*)/?(.*)$ index.php?c=$1&a=$2 [QSA,L]
+Options -Indexes 
+IndexOptions -FancyIndexing
